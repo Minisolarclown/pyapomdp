@@ -19,5 +19,7 @@ Installation Instructions
 17. Run `git checkout v0.2.1`
 18. Change the terminal directory back to the aPOMDP project directory
 19. In ./src/apomdp.jl, remove all references to SARSOP
+
+As a test, run the following commands. If you see the number 1 followed by o's, everything is working correctly and you can halt the program. Otherwise, it may run for a very long time.
 20. Run `touch results/random_qmdp_isvr_200_-1_0_10000_new_struct_space_cenas.yaml`
 21. Run `julia ./src/hri_simulator.jl`
