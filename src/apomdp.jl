@@ -23,7 +23,7 @@
 using POMDPs, POMDPModels, POMDPToolbox
 
 # Solvers
-using QMDP, SARSOP#, DESPOT, MCVI # (MCVI is failing on load)
+using QMDP# , SARSOP#, DESPOT, MCVI # (MCVI is failing on load)
 
 # Other stuff
 using IterTools
@@ -292,9 +292,9 @@ function POMDPToolbox.DiscreteBelief(dist::apomdpDistribution)
 end
 
 # Discrete belief converter from apomdpDistribution (SARSOP), adding it to the SARSOP module so it's found
-function SARSOP.convert(::Type{POMDPToolbox.DiscreteBelief}, dist::apomdpDistribution)
-    return POMDPToolbox.DiscreteBelief(dist)
-end
+#function SARSOP.convert(::Type{POMDPToolbox.DiscreteBelief}, dist::apomdpDistribution)
+#    return POMDPToolbox.DiscreteBelief(dist)
+#end
 
 # Define sampling function to sample a state from the transition probability
 function POMDPs.rand(rng::AbstractRNG, dist::apomdpDistribution)
@@ -358,9 +358,9 @@ function solve(pomdp::aPOMDP, solver_name::String="")
     if solver_name == "qmdp"
         solver = QMDPSolver()
         policy = POMDPs.solve(solver, pomdp)
-    elseif solver_name == "sarsop"
-        solver = SARSOPSolver()
-        policy = POMDPs.solve(solver, pomdp, silent=true)
+#    elseif solver_name == "sarsop"
+#        solver = SARSOPSolver()
+#        policy = POMDPs.solve(solver, pomdp, silent=true)
     elseif solver_name == "despot"
         # TODO: fix this stuff
         #solver = DESPOTSolver{apomdpState, Int64, apomdpObservation, apomdpBounds, RandomStreams}()

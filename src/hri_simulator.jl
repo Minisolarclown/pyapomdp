@@ -209,7 +209,7 @@ f1 = open("results/random_qmdp_isvr_200_-1_0_10000_new_struct_space_cenas.yaml",
 for i = 1:10
     println(i)
     tic()
-    basic_test(re_calc_interval=200, num_iter=10000, out_file=f1, solver_name="qmdp", reward_name="isvr", state_structure=[3,3,3,3,3], n_actions=7)
+    basic_test(re_calc_interval=200, num_iter=100, out_file=f1, solver_name="qmdp", reward_name="isvr", state_structure=[3,3,3,3,3], n_actions=7)
     print("\n")
     toc()
 end

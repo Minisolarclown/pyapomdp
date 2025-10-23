@@ -200,7 +200,7 @@ def plot_timeseries_data(filename, outfile=None, entropy=False):
 
 	# And plot
 	plt.figure(figsize=(6.4, 3.2))
-	plt.hold(True)
+	#plt.hold(True)
 	plt.plot(avg_cum_reward, label="avg", color=line_color)
 	plt.plot(extra_border_max, '--', label="max", color=std_color)
 	plt.plot(extra_border_min, '--', label="min", color=std_color)
@@ -284,7 +284,7 @@ def plot_state_histogram(filename, outfile=None):
 
 	# And plot bars
 	plt.figure(figsize=(6.4, 3.2))
-	plt.hold(True)
+	#plt.hold(True)
 	for i,elem in enumerate(avg_vec):
 		plt.bar(i+left_padding+offset, elem, width=col_width, color=custom_color(i))
 	plt.xlabel("State Ranks")
@@ -339,7 +339,7 @@ def plot_state_distribution(filename, outfile=None):
 
 	# And plot stuff
 	plt.figure(figsize=(6.4, 3.2))
-	plt.hold(True)
+	#plt.hold(True)
 	plt.plot(avg_vec)
 	plt.xlabel("State Ranks")
 	plt.ylabel("Iterations")
@@ -450,7 +450,7 @@ def read_test_yaml(filename):
 
 if __name__ == "__main__":
 	# Configure matplotlib
-	rc('text', usetex=True)
+	#rc('text', usetex=True)
 
 	# Plot the learning distribution example:
 	#plot_distribution_example()
