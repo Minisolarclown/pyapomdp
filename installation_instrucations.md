@@ -6,7 +6,7 @@ Installation Instructions
 4. Run `Pkg.add("POMDPModels")`
 5. Run `Pkg.clone("https://github.com/JuliaPOMDP/QMDP.jl")`
 6. Run `Pkg.clone("https://github.com/JuliaPOMDP/DiscreteValueIteration.jl")`
-7. Run `Pkg.clone("https://github.com/JuliaCollections/IterTools.jl.git")`
+7. Run `Pkg.clone("https://github.com/JuliaCollections/IterTools.jl")`
 8. Close Julia by entering CTRL-D. If that does not work, follow that up with CTRL-C.
 9. Still in the terminal, run `cd ~/.julia/v0.6/QMDP`
 10. Run `git fetch --all`
