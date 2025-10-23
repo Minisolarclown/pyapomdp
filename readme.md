@@ -25,6 +25,42 @@ This package was tested under:
 * Latest versions of [JuliaPOMDP](https://github.com/JuliaPOMDP/POMDPs.jl) and related packages, as of October 2017
 * ROS interfacing was obtained using the [RobotOS](https://github.com/jdlangs/RobotOS.jl) Julia package
 
+## Installation Instructions
+
+1. Install [Julia v0.6.4](https://julialang.org/downloads/oldreleases/).
+2. Add Julia 0.6 to your operating system's PATH. 
+3. Open a new terminal and run `julia`
+4. Run `Pkg.add("POMDPs")`
+5. Run `Pkg.add("POMDPModels")`
+6. Run `Pkg.add("LightXML")`
+7. Run `Pkg.clone("https://github.com/JuliaPOMDP/QMDP.jl")`
+8. Run `Pkg.clone("https://github.com/JuliaPOMDP/DiscreteValueIteration.jl")`
+9. Run `Pkg.clone("https://github.com/JuliaCollections/IterTools.jl")`
+10. Run `Pkg.clone("https://github.com/JuliaPOMDP/SARSOP.jl")`
+11. Run `Pkg.clone("https://github.com/JuliaPOMDP/POMDPXFiles.jl")`
+12. Close Julia by running `exit()`.
+14. Still in the terminal, run `cd ~/.julia/v0.6/QMDP`
+15. Run `git fetch --all`
+16. Run `git checkout 0.6-version`
+17. Run `cd ~/.julia/v0.6/DiscreteValueIteration`
+18. Run `git fetch --all`
+19. Run `git checkout v0.1.0`
+20. Run `cd ~/.julia/v0.6/IterTools`
+21. Run `git fetch --all`
+22. Run `git checkout v0.2.1`
+23. Run `cd ~./.julia/v0.6/SARSOP`
+24. Run `git fetch --all`
+25. Run `git checkout 4410c1f`
+26. Run `cd ~./.julia/v0.6/POMDPXFiles`
+27. Run `git fetch --all`
+28. Run `git checkout 0.6-version`
+29. Change the terminal directory back to the aPOMDP project directory
+
+As a test, run the following commands. If you see the number 1 followed by o's, everything is working correctly and you can halt the program. Otherwise, it may run for a very long time.
+
+30. Run `touch results/random_qmdp_isvr_200_-1_0_10000_new_struct_space_cenas.yaml`
+31. Run `julia ./src/hri_simulator.jl`
+
 ## Usage
 ### Simulations
 The main entry point is the `hri_simulator.jl` script, which is our main simulator. This makes use of the "class" defined in `apomdp.jl`. The script contains the various configurations used for producing the results in the paper.
